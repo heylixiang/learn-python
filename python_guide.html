@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 学习指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .section p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        
+        .section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .section li {
+            margin-bottom: 8px;
+        }
+        
+        .code-block {
+            background: #f5f5f5;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            border-radius: 5px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .tip {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .tip strong {
+            color: #28a745;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .warning strong {
+            color: #dc3545;
+        }
+        
+        .roadmap {
+            background: #f0f4ff;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .roadmap ol {
+            margin-left: 20px;
+        }
+        
+        .roadmap li {
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 15px 0;
+        }
+        
+        .resource-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resource-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐍 Python 学习指南</h1>
+            <p>从入门到精通的完整学习路线</p>
+        </div>
+        
+        <div class="content">
+            <!-- 介绍部分 -->
+            <div class="section">
+                <h2>📚 什么是 Python？</h2>
+                <p>Python 是一种高级、解释性的编程语言，以其简洁易读的语法而闻名。它由 Guido van Rossum 于 1991 年创建，现已成为全球最受欢迎的编程语言之一。</p>
+                <p><span class="highlight">Python 的应用领域</span>包括：</p>
+                <ul>
+                    <li><strong>数据科学和机器学习</strong> - NumPy、Pandas、TensorFlow、PyTorch</li>
+                    <li><strong>Web 开发</strong> - Django、Flask、FastAPI</li>
+                    <li><strong>自动化脚本</strong> - 系统管理、爬虫、任务自动化</li>
+                    <li><strong>科学计算</strong> - SciPy、Matplotlib、Jupyter</li>
+                    <li><strong>桌面应用</strong> - PyQt、Tkinter</li>
+                    <li><strong>游戏开发</strong> - Pygame</li>
+                </ul>
+            </div>
+            
+            <!-- 学习路线 -->
+            <div class="section">
+                <h2>🗺️ 学习路线图</h2>
+                <div class="roadmap">
+                    <ol>
+                        <li><strong>基础语法</strong> - 变量、数据类型、运算符、控制流</li>
+                        <li><strong>函数</strong> - 函数定义、参数、返回值、作用域</li>
+                        <li><strong>数据结构</strong> - 列表、元组、字典、集合</li>
+                        <li><strong>面向对象编程</strong> - 类、继承、多态、封装</li>
+                        <li><strong>异常处理</strong> - try-except、finally、自定义异常</li>
+                        <li><strong>文件操作</strong> - 读写文件、文件管理</li>
+                        <li><strong>模块和包</strong> - 导入、创建模块、包结构</li>
+                        <li><strong>高级主题</strong> - 装饰器、生成器、上下文管理器</li>
+                        <li><strong>专项技能</strong> - 选择你感兴趣的领域深入学习</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- 第一阶段：基础语法 -->
+            <div class="section">
+                <h2>1️⃣ 基础语法（第 1-2 周）</h2>
+                
+                <h3>变量和数据类型</h3>
+                <p>Python 是动态类型语言，变量无需预先声明类型。</p>
+                <div class="code-block">
+# 变量赋值<br>
+name = "Python"<br>
+age = 30<br>
+height = 1.75<br>
+is_fun = True<br>
+<br>
+# 查看数据类型<br>
+print(type(name))  # &lt;class 'str'&gt;<br>
+print(type(age))   # &lt;class 'int'&gt;
+                </div>
+                
+                <h3>基本数据类型</h3>
+                <table class="table">
+                    <tr>
+                        <th>类型</th>
+                        <th>描述</th>
+                        <th>示例</th>
+                    </tr>
+                    <tr>
+                        <td>str</td>
+                        <td>字符串</td>
+                        <td>"Hello, Python"</td>
+                    </tr>
+                    <tr>
+                        <td>int</td>
+                        <td>整数</td>
+                        <td>42, -10</td>
+                    </tr>
+                    <tr>
+                        <td>float</td>
+                        <td>浮点数</td>
+                        <td>3.14, -0.5</td>
+                    </tr>
+                    <tr>
+                        <td>bool</td>
+                        <td>布尔值</td>
+                        <td>True, False</td>
+                    </tr>
+                </table>
+                
+                <h3>控制流</h3>
+                <div class="code-block">
+# if 语句<br>
+age = 18<br>
+if age >= 18:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("成年人")<br>
+elif age >= 13:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("青少年")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("儿童")<br>
+<br>
+# for 循环<br>
+for i in range(5):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(i)  # 0, 1, 2, 3, 4<br>
+<br>
+# while 循环<br>
+count = 0<br>
+while count < 3:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(count)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;count += 1
+                </div>
+                
+                <div class="tip">
+                    <strong>💡 学习建议：</strong>通过编写小程序来练习，例如计算器、猜数字游戏等。
+                </div>
+            </div>
+            
+            <!-- 第二阶段：函数和数据结构 -->
+            <div class="section">
+                <h2>2️⃣ 函数和数据结构（第 3-4 周）</h2>
+                
+                <h3>函数定义</h3>
+                <div class="code-block">
+def greet(name, greeting="你好"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"""问候用户的函数"""<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return f"{greeting}, {name}!"<br>
+<br>
+result = greet("Alice")<br>
+print(result)  # 你好, Alice!
+                </div>
+                
+                <h3>常用数据结构</h3>
+                <div class="code-block">
+# 列表 - 可变的有序集合<br>
+fruits = ["apple", "banana", "orange"]<br>
+fruits.append("grape")<br>
+print(fruits[0])  # apple<br>
+<br>
+# 字典 - 键值对集合<br>
+person = {"name": "Alice", "age": 30, "city": "Beijing"}<br>
+print(person["name"])  # Alice<br>
+<br>
+# 元组 - 不可变的有序集合<br>
+coordinates = (10, 20)<br>
+<br>
+# 集合 - 不重复的无序集合<br>
+unique_numbers = {1, 2, 3, 3, 4}<br>
+print(unique_numbers)  # {1, 2, 3, 4}
+                </div>
+                
+                <div class="tip">
+                    <strong>💡 学习建议：</strong>掌握列表推导式、字典推导式等高级用法。
+                </div>
+            </div>
+            
+            <!-- 第三阶段：面向对象编程 -->
+            <div class="section">
+                <h2>3️⃣ 面向对象编程（第 5-6 周）</h2>
+                
+                <h3>类和对象</h3>
+                <div class="code-block">
+class Animal:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, name, age):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name = name<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.age = age<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def speak(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f"{self.name} makes a sound"<br>
+<br>
+class Dog(Animal):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def speak(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f"{self.name} barks!"<br>
+<br>
+dog = Dog("Buddy", 5)<br>
+print(dog.speak())  # Buddy barks!
+                </div>
+                
+                <h3>重要概念</h3>
+                <ul>
+                    <li><strong>继承</strong> - 子类继承父类的属性和方法</li>
+                    <li><strong>多态</strong> - 不同对象对同一方法的不同响应</li>
+                    <li><strong>封装</strong> - 隐藏内部实现细节</li>
+                    <li><strong>属性修饰符</strong> - 公有、保护、私有属性</li>
+                </ul>
+            </div>
+            
+            <!-- 第四阶段：高级特性 -->
+            <div class="section">
+                <h2>4️⃣ 高级特性（第 7-8 周）</h2>
+                
+                <h3>装饰器</h3>
+                <div class="code-block">
+def my_decorator(func):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def wrapper(*args, **kwargs):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Before function call")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = func(*args, **kwargs)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("After function call")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return result<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return wrapper<br>
+<br>
+@my_decorator<br>
+def say_hello():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print("Hello!")
+                </div>
+                
+                <h3>生成器</h3>
+                <div class="code-block">
+def number_generator():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for i in range(5):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield i<br>
+<br>
+for num in number_generator():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(num)
+                </div>
+                
+                <h3>上下文管理器</h3>
+                <div class="code-block">
+with open('file.txt', 'r') as f:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;content = f.read()<br>
+# 文件自动关闭
+                </div>
+            </div>
+            
+            <!-- 实践项目 -->
+            <div class="section">
+                <h2>💻 推荐实践项目</h2>
+                <p>通过项目学习是最有效的方式：</p>
+                
+                <h3>初级项目</h3>
+                <ul>
+                    <li>计算器应用</li>
+                    <li>待办事项列表</li>
+                    <li>简单的爬虫</li>
+                    <li>猜数字游戏</li>
+                </ul>
+                
+                <h3>中级项目</h3>
+                <ul>
+                    <li>个人博客网站（Django/Flask）</li>
+                    <li>数据分析项目（Pandas/Matplotlib）</li>
+                    <li>天气查询应用</li>
+                    <li>REST API 开发</li>
+                </ul>
+                
+                <h3>高级项目</h3>
+                <ul>
+                    <li>机器学习模型（sklearn/TensorFlow）</li>
+                    <li>分布式爬虫系统</li>
+                    <li>实时数据处理平台</li>
+                    <li>云应用部署</li>
+                </ul>
+            </div>
+            
+            <!-- 学习资源 -->
+            <div class="section">
+                <h2>📖 学习资源</h2>
+                <div class="resources">
+                    <div class="resource-card">
+                        <h4>官方文档</h4>
+                        <p>Python 官方文档是最权威的学习资料，包含所有库函数的详细说明。</p>
+                    </div>
+                    <div class="resource-card">
+                        <h4>在线平台</h4>
+                        <p>LeetCode、HackerRank 等平台提供大量编程练习题。</p>
+                    </div>
+                    <div class="resource-card">
+                        <h4>视频教程</h4>
+                        <p>YouTube、Bilibili 上有许多高质量的 Python 教程。</p>
+                    </div>
+                    <div class="resource-card">
+                        <h4>书籍推荐</h4>
+                        <p>《Python Crash Course》、《Fluent Python》等经典著作。</p>
+                    </div>
+                    <div class="resource-card">
+                        <h4>社区讨论</h4>
+                        <p>Stack Overflow、Reddit 等社区可以获取帮助和灵感。</p>
+                    </div>
+                    <div class="resource-card">
+                        <h4>开源项目</h4>
+                        <p>GitHub 上的开源项目是学习的好素材。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学习建议 -->
+            <div class="section">
+                <h2>🎯 学习建议</h2>
+                
+                <div class="tip">
+                    <strong>✅ 做：</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>每天练习，即使只有 30 分钟</li>
+                        <li>从简单的项目开始，逐步增加难度</li>
+                        <li>阅读他人的代码，学习最佳实践</li>
+                        <li>参与开源项目和社区讨论</li>
+                        <li>记录学习笔记和总结</li>
+                    </ul>
+                </div>
+                
+                <div class="warning">
+                    <strong>❌ 不要：</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>只看教程不实践</li>
+                        <li>急于追求高级话题</li>
+                        <li>看一遍就认为掌握了</li>
+                        <li>忽视基础的重要性</li>
+                        <li>复制粘贴代码而不理解</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 常见问题 -->
+            <div class="section">
+                <h2>❓ 常见问题 FAQ</h2>
+                
+                <h3>Q: 学习 Python 需要多长时间？</h3>
+                <p>A: 这取决于你的目标和投入时间。基础掌握需要 4-8 周，成为专业开发者通常需要 6-12 个月的持续学习和实践。</p>
+                
+                <h3>Q: Python 有哪些版本？</h3>
+                <p>A: Python 2 已于 2020 年停止支持，现在应该使用 Python 3.x。当前推荐使用 Python 3.8+ 以获得最新特性。</p>
+                
+                <h3>Q: 应该使用什么 IDE？</h3>
+                <p>A: PyCharm（功能完整但付费）、VS Code（轻量级免费）、Jupyter Notebook（数据科学）都是不错的选择。</p>
+                
+                <h3>Q: 先学什么，后学什么？</h3>
+                <p>A: 按照我们的学习路线图走：基础 → 函数 → 数据结构 → OOP → 高级特性 → 专项领域。</p>
+                
+                <h3>Q: 如何保持学习动力？</h3>
+                <p>A: 选择感兴趣的项目、加入学习社区、制定明确目标、定期总结进度。</p>
+            </div>
+            
+            <!-- 总结 -->
+            <div class="section">
+                <h2>🌟 最后的话</h2>
+                <p>Python 的学习旅程是一个循序渐进的过程。不要期望立即掌握所有内容，而是要持续学习和实践。每个问题都是学习的机会，每个错误都能让你进步。</p>
+                <p><strong>记住：通向掌握的唯一途径就是编码！</strong></p>
+                <p style="margin-top: 20px; font-style: italic; color: #666;">Happy Coding! 🚀</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2026 Python Learning Guide. 保留所有权利。</p>
+            <p>最后更新：2026 年 1 月 20 日</p>
+        </div>
+    </div>
+</body>
+</html>
